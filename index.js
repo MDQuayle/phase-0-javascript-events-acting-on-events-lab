@@ -32,3 +32,34 @@ document.addEventListener("keydown", function(e) {
       moveDodgerRight();
     }
   }); 
+
+
+function moveDodgerDown() {
+  const bottomNumbers = dodger.style.bottom.replace("px", "");
+  const bottom = parseInt(bottomNumbers, 10);
+  
+  if (bottom > 0) {
+    dodger.style.bottom = `${bottom - 1}px`;
+    }
+  } 
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowDown") {
+      moveDodgerDown();
+    }
+  }); 
+
+function moveDodgerUp() {
+    const bottomNumbers = dodger.style.bottom.replace("px", "");
+    const bottom = parseInt(bottomNumbers, 10);
+  
+    if (bottom < 380) {
+      dodger.style.bottom = `${bottom + 1}px`;
+    }
+  } 
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowUp") {
+      moveDodgerUp();
+    }
+  }); 
